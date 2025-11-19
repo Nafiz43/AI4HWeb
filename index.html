@@ -101,6 +101,17 @@
       padding: 15px 0;
     }
 
+    .site-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .site-logo {
+      width: 60px;
+      height: auto;
+    }
+
     .site-title {
       display: flex;
       flex-direction: column;
@@ -686,9 +697,12 @@
   <!-- Main Navigation -->
   <nav class="main-nav">
     <div class="container nav-inner">
-      <div class="site-title">
-        <h1>AI for Health Center</h1>
-        <span class="subtitle">Computer Science and Radiology</span>
+      <div class="site-brand">
+        <img src="img/AI4H_logo.png" alt="AI for Health logo" class="site-logo" />
+        <div class="site-title">
+          <h1>AI for Health Center</h1>
+          <span class="subtitle">Computer Science and Radiology</span>
+        </div>
       </div>
       <ul class="main-menu">
         <li><a href="#about">About</a></li>
