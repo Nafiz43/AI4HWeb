@@ -1,4 +1,4 @@
-# AI for Health Center
+# AI for Health Collectives
 
 The UC Davis AI for Health Research Center is a cross-college hub jointly anchored in the Department of Computer Science College of Engineering (CoE)) and the Department of Radiology (School of Medicine (SOM)). The Center's purpose is to catalyze research, education, translation, and responsible innovation in artificial intelligence (AI) for health. Specific goals are to:
 
