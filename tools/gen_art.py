@@ -136,46 +136,49 @@ def signal():
 
 
 # ------------------------------------------------------------------- hero
-def bezier(p0, c1, c2, p3, t):
-    u = 1 - t
-    return (u**3*p0[0] + 3*u*u*t*c1[0] + 3*u*t*t*c2[0] + t**3*p3[0],
-            u**3*p0[1] + 3*u*u*t*c1[1] + 3*u*t*t*c2[1] + t**3*p3[1])
-
-
 def hero():
-    W, H = 1200, 750
-    out = ''
-    nets = [[(96, 158), (196, 94), (286, 180), (168, 240), (78, 270), (272, 296)],
-            [(1104, 140), (1004, 86), (914, 176), (1032, 236), (1122, 266), (928, 290)],
-            [(126, 620), (232, 664), (310, 598), (196, 548)],
-            [(1084, 636), (978, 590), (900, 660), (1014, 700)]]
-    for net in nets:
-        for i, a in enumerate(net):
-            for b in net[i + 1:]:
-                if math.dist(a, b) < 170:
-                    out += (f'  <line x1="{a[0]}" y1="{a[1]}" x2="{b[0]}" y2="{b[1]}" '
-                            f'stroke="{MID}" stroke-width="1.8" opacity=".32"/>\n')
-        for i, (x, y) in enumerate(net):
-            out += sphere(x, y, 12 if i % 2 else 9, gold=(i == 2))
+    """One idea, read left to right: a network of people and data becomes a
+    health signal, and lands on a single outcome."""
+    W, H = 1200, 700          # cropped tight to the composition
+    out = ('  <radialGradient id="glow" cx=".5" cy=".5" r=".5">'
+           '<stop offset="0" stop-color="#ffbf00" stop-opacity=".55"/>'
+           '<stop offset="1" stop-color="#ffbf00" stop-opacity="0"/></radialGradient>\n')
 
-    out += ('  <path d="M-40 452 C 210 288, 380 640, 620 452 S 1010 236, 1250 384" fill="none" '
-            'stroke="url(#glass)" stroke-width="118" stroke-linecap="round" opacity=".85"/>\n')
-    out += (f'  <path d="M-40 540 C 230 400, 400 716, 640 540 S 1020 332, 1250 486" fill="none" '
-            f'stroke="{MID}" stroke-width="44" stroke-linecap="round" opacity=".26"/>\n')
+    # the ribbon: data carrying across the frame
+    out += ('  <path d="M-60 430 C 190 264, 372 620, 610 432 S 1000 214, 1260 362" fill="none" '
+            'stroke="url(#glass)" stroke-width="126" stroke-linecap="round" opacity=".8"/>\n')
+    out += (f'  <path d="M-60 528 C 214 386, 396 706, 636 528 S 1014 318, 1260 476" fill="none" '
+            f'stroke="{MID}" stroke-width="40" stroke-linecap="round" opacity=".22"/>\n')
 
-    # the gold stream, and particles sampled from the very same curve
-    segs = [((-30, 496), (220, 330), (392, 688), (632, 498)),
-            ((632, 498), (872, 308), (1020, 276), (1240, 426))]
-    out += ('  <path d="M-30 496 C 220 330, 392 688, 632 498 S 1020 276, 1240 426" fill="none" '
-            'stroke="url(#rod)" stroke-width="6" opacity=".95"/>\n')
-    for si, seg in enumerate(segs):
-        for k in range(26):
-            t = k / 25
-            x, y = bezier(*seg, t)
-            r = 4.5 + 6.5 * abs(math.sin((si + t) * 6.1))
-            out += f'  <circle cx="{x:.0f}" cy="{y:.0f}" r="{r:.1f}" fill="url(#goldball)" opacity=".92"/>\n'
+    # one network, denser on the left, thinning as it feeds into the signal
+    nodes = [(78, 236), (168, 168), (150, 322), (262, 246), (238, 400), (330, 150),
+             (352, 330), (300, 520), (432, 236), (412, 452), (516, 158), (524, 348),
+             (470, 590), (612, 250), (596, 462), (700, 168), (724, 344), (836, 236),
+             (880, 128), (960, 300), (1064, 190), (1126, 288)]
+    edges = set()
+    for i, a in enumerate(nodes):
+        near = sorted(range(len(nodes)), key=lambda j: math.dist(a, nodes[j]))[1:4]
+        for j in near:
+            if math.dist(a, nodes[j]) < 205:
+                edges.add((min(i, j), max(i, j)))
+    for i, j in sorted(edges):
+        (x1, y1), (x2, y2) = nodes[i], nodes[j]
+        fade = .34 - .2 * (x1 + x2) / (2 * W)        # thins out towards the right
+        out += (f'  <line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{MID}" '
+                f'stroke-width="1.7" opacity="{fade:.2f}"/>\n')
+    for i, (x, y) in enumerate(nodes):
+        r = 13 - 5 * (x / W)                          # smaller with distance
+        out += sphere(x, y, r, gold=(i in (4, 13)))
 
-    return svg(W, H, out, 'Networks and a data stream flowing through intertwined forms')
+    # the signal: leaves the network, steadies, beats, and arrives
+    out += ('  <path d="M78 236 C 200 292, 236 392, 342 420 S 520 452, 616 470 '
+            'L742 470 L764 470 L784 418 L806 552 L828 436 L848 470 L900 470 '
+            'L920 470 L938 400 L956 540 L974 470 L1046 470" fill="none" stroke="url(#rod)" '
+            'stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>\n')
+
+    out += '  <circle cx="1072" cy="470" r="86" fill="url(#glow)"/>\n'
+    out += sphere(1072, 470, 26, gold=True)
+    return svg(W, H, out, 'A research network flowing into a health signal')
 
 
 for name, fn in (('topic-basic', lattice), ('topic-methods', layers), ('topic-theory', hyperboloid),
