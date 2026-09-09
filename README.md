@@ -1,6 +1,6 @@
 # UC Davis Computer Science Department AI for Health initiative (CS AI4H)
 
-The UC Davis Computer Science (CS) Department AI for Health Initiative (CS AI4H) is the initial stage of a concentrated effort to conncet resources and talent between CS and Health. It is intended to catalyze research, education, translation, and responsible innovation in artificial intelligence (AI) for health. Specific goals are to:
+The UC Davis Computer Science (CS) Department AI for Health Initiative (CS AI4H) is the initial stage of a concentrated effort to connect resources and talent between CS and Health. It is intended to catalyze research, education, translation, and responsible innovation in artificial intelligence (AI) for health. Specific goals are to:
 
 - Serve the needs of the CS Department and UC Davis broadly.
 
