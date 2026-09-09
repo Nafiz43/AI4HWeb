@@ -55,7 +55,7 @@
     @media (max-width: 820px) { .main-menu { display: none; } }
 
     /* Hero */
-    .hero { background: linear-gradient(140deg, var(--accent-wash) 0%, var(--bg) 70%); padding: 60px 0 50px; border-bottom: 3px solid var(--gold); }
+    .hero { background: linear-gradient(140deg, var(--accent-wash) 0%, var(--bg) 70%); padding: 42px 0 36px; border-bottom: 3px solid var(--gold); }
     .kicker { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--accent-soft); margin-bottom: 12px; }
     .hero h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.15; color: var(--accent); margin-bottom: 18px; }
     .hero p { font-size: 18px; max-width: 720px; color: var(--text); }
@@ -63,8 +63,8 @@
     @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
     .hero-art { border-radius: 10px; box-shadow: var(--shadow); width: 100%; height: auto; }
 
-    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin: 32px 0; }
-    .fact { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: 6px; padding: 16px 18px; box-shadow: var(--shadow); }
+    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 24px 0; }
+    .fact { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: 6px; padding: 12px 16px; box-shadow: var(--shadow); }
     .fact-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 700; }
     .fact-value { font-size: 19px; font-weight: 700; color: var(--text); margin-top: 4px; }
 
@@ -78,11 +78,11 @@
     .btn-note { font-size: 14px; color: var(--text-muted); }
 
     /* Sections */
-    section { padding: 55px 0; }
+    section { padding: 38px 0; }
     section:nth-of-type(even) { background: var(--bg-alt); }
     .section-title { font-size: 28px; color: var(--accent); margin-bottom: 10px; }
-    .section-sub { color: var(--text-muted); max-width: 700px; margin-bottom: 30px; }
-    .prose p { margin-bottom: 16px; max-width: 760px; }
+    .section-sub { color: var(--text-muted); max-width: 700px; margin-bottom: 20px; }
+    .prose p { margin-bottom: 13px; max-width: 760px; }
 
     html { scroll-behavior: smooth; }
     section { scroll-margin-top: 100px; }
@@ -98,10 +98,10 @@
     }
 
     /* Illustrated research themes, one motif per topic. */
-    .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
+    .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
     .topic { border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: var(--shadow); }
     .topic img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
-    .topic-body { padding: 18px 20px 22px; }
+    .topic-body { padding: 15px 18px 18px; }
     .topic-body span { display: block; font-size: 12px; font-weight: 700; letter-spacing: 2px; color: #8c6800; margin-bottom: 4px; }
     .topic-body h3 { font-size: 18px; color: var(--accent); margin-bottom: 6px; }
     .topic-body p { font-size: 15px; color: var(--text-muted); }
@@ -110,19 +110,19 @@
 
     /* Calendar day view */
     .calendar { border: 1px solid var(--border); border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 0 12px 35px #0228510c; }
-    .calendar-head { display: flex; align-items: center; gap: 22px; padding: 24px 30px; background: var(--accent); color: #fff; }
+    .calendar-head { display: flex; align-items: center; gap: 20px; padding: 18px 26px; background: var(--accent); color: #fff; }
     .date-tile { text-align: center; border-radius: 10px; overflow: hidden; min-width: 76px; background: #fff; color: var(--accent); line-height: 1.2; }
     .date-tile span { display: block; background: var(--gold); padding: 5px 12px; font-size: 12px; font-weight: 700; letter-spacing: 2px; }
     .date-tile strong { display: block; font-size: 38px; padding: 6px 12px; }
     .calendar-head h3 { font-size: 23px; }
     .calendar-head p { font-size: 14px; color: #dce6ef; }
-    .schedule-note { padding: 13px 30px; background: #fff8e4; font-size: 14px; color: #685000; border-bottom: 1px solid #f0dfaf; }
-    .day-grid { padding: 12px 24px 24px; }
+    .schedule-note { padding: 11px 26px; background: #fff8e4; font-size: 14px; color: #685000; border-bottom: 1px solid #f0dfaf; }
+    .day-grid { padding: 4px 24px 14px; }
     .time-slot { display: grid; grid-template-columns: 85px minmax(0,1fr); border-top: 1px solid var(--border); }
-    .time-slot > time { padding-top: 16px; font-size: 13px; color: var(--text-muted); font-weight: 600; }
-    .event { margin: 8px 0; border-left: 4px solid #628cac; border-radius: 6px; background: #eef4f9; min-height: var(--duration); }
+    .time-slot > time { padding-top: 13px; font-size: 13px; color: var(--text-muted); font-weight: 600; }
+    .event { margin: 5px 0; border-left: 4px solid #628cac; border-radius: 6px; background: #eef4f9; }
     .event.gold { border-left-color: #c79200; background: #fff8e4; }
-    .event summary { padding: 12px 16px; color: var(--accent); font-weight: 700; }
+    .event summary { padding: 10px 16px; color: var(--accent); font-weight: 700; }
     .event summary small { display: block; margin-left: 16px; font-size: 12px; font-weight: 400; color: var(--text-muted); }
     .event p { padding: 0 16px 14px; font-size: 14px; color: var(--text-muted); }
     .calendar-end { padding-left: 0; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); }
@@ -141,12 +141,12 @@
     }
 
     /* Callout */
-    .callout { background: var(--accent-wash); border: 1px solid var(--accent-soft); border-radius: 8px; padding: 22px 24px; max-width: 760px; }
+    .callout { background: var(--accent-wash); border: 1px solid var(--accent-soft); border-radius: 8px; padding: 18px 22px; max-width: 760px; }
     .callout strong { color: var(--accent); }
 
-    footer { background: var(--accent); color: #fff; padding: 40px 0 25px; font-size: 14px; }
+    footer { background: var(--accent); color: #fff; padding: 30px 0 20px; font-size: 14px; }
     footer a { color: inherit; text-decoration: underline; }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.25); margin-top: 25px; padding-top: 18px; opacity: .85; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.25); margin-top: 18px; padding-top: 14px; opacity: .85; }
   </style>
 </head>
 
@@ -223,27 +223,27 @@
         <div class="day-grid">
           <div class="time-slot">
             <time>1:00 pm</time>
-            <details class="event gold" style="--duration:70px"><summary>Welcome &amp; opening<small>1:00–1:15 pm · 15 min</small></summary><p>Opening remarks and an introduction to the CS AI for Health community.</p></details>
+            <details class="event gold"><summary>Welcome &amp; opening<small>1:00–1:15 pm · 15 min</small></summary><p>Opening remarks and an introduction to the CS AI for Health community.</p></details>
           </div>
           <div class="time-slot">
             <time>1:15 pm</time>
-            <details class="event" style="--duration:135px"><summary>Invited talks<small>1:15–2:30 pm · 75 min</small></summary><p>Perspectives from computer science and clinical research.</p></details>
+            <details class="event"><summary>Invited talks<small>1:15–2:30 pm · 75 min</small></summary><p>Perspectives from computer science and clinical research.</p></details>
           </div>
           <div class="time-slot">
             <time>2:30 pm</time>
-            <details class="event gold" style="--duration:70px"><summary>Networking break<small>2:30–2:45 pm · 15 min</small></summary><p>Meet researchers and reconnect with colleagues.</p></details>
+            <details class="event gold"><summary>Networking break<small>2:30–2:45 pm · 15 min</small></summary><p>Meet researchers and reconnect with colleagues.</p></details>
           </div>
           <div class="time-slot">
             <time>2:45 pm</time>
-            <details class="event" style="--duration:135px"><summary>Student presentations<small>2:45–4:00 pm · 75 min</small></summary><p>Short research talks, with priority given to students and junior faculty.</p></details>
+            <details class="event"><summary>Student presentations<small>2:45–4:00 pm · 75 min</small></summary><p>Short research talks, with priority given to students and junior faculty.</p></details>
           </div>
           <div class="time-slot">
             <time>4:00 pm</time>
-            <details class="event gold" style="--duration:110px"><summary>Poster session<small>4:00–5:00 pm · 60 min</small></summary><p>Explore recent and in-progress work, from methods to clinical applications.</p></details>
+            <details class="event gold"><summary>Poster session<small>4:00–5:00 pm · 60 min</small></summary><p>Explore recent and in-progress work, from methods to clinical applications.</p></details>
           </div>
           <div class="time-slot">
             <time>5:00 pm</time>
-            <details class="event" style="--duration:110px"><summary>Networking &amp; closing<small>5:00–6:00 pm · 60 min</small></summary><p>Continue the conversations and find collaborators across campus and industry.</p></details>
+            <details class="event"><summary>Networking &amp; closing<small>5:00–6:00 pm · 60 min</small></summary><p>Continue the conversations and find collaborators across campus and industry.</p></details>
           </div>
           <div class="calendar-end">6:00 pm · End of symposium</div>
         </div>
@@ -273,7 +273,7 @@
           <div class="topic-body"><span>04</span><h3>Applied and clinical</h3><p>Deployment, clinical workflows, validation, and outcomes.</p></div>
         </article>
       </div>
-      <p style="margin-top:26px"><strong>Talks from students and junior faculty are especially welcome.</strong> Industry representatives are highly encouraged to register and attend.</p>
+      <p style="margin-top:20px"><strong>Talks from students and junior faculty are especially welcome.</strong> Industry representatives are highly encouraged to register and attend.</p>
     </div>
   </section>
 
@@ -284,7 +284,7 @@
       <div class="callout">
         <p>Registration closes once we reach the maximum number of attendees, so register as soon as you can and say on the form if you want to give a talk or show a poster. <strong>Presentation slots are very limited</strong>, and the committee may need to select from submissions if interest is high.</p>
       </div>
-      <div class="btn-row" style="margin-top:26px">
+      <div class="btn-row" style="margin-top:20px">
         <a class="btn btn-primary" href="https://forms.gle/Dh9NvmwDPitoYFEF9" target="_blank" rel="noopener">Open the registration form</a>
         <span class="btn-note">Registration is handled by Google Forms. Questions: <a href="mailto:vlfilkov@ucdavis.edu">vlfilkov@ucdavis.edu</a></span>
       </div>
