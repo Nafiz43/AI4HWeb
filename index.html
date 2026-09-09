@@ -65,6 +65,13 @@
     .main-menu a:hover { border-bottom-color: var(--ucd-gold); opacity: 1; }
     @media (max-width: 768px) { .main-menu { display: none; } }
 
+    /* Symposium announcement strip */
+    .announce { background: var(--ucd-gold); color: var(--ucd-blue); }
+    .announce-inner { display: flex; align-items: center; justify-content: center; gap: 8px 18px; flex-wrap: wrap; padding: 11px 0; font-size: 15px; font-weight: 600; text-align: center; }
+    .announce b { font-weight: 700; }
+    .announce a.go { background: var(--ucd-blue); color: #fff; border-radius: 4px; padding: 6px 16px; font-size: 14px; font-weight: 700; }
+    .announce a.go:hover { opacity: .85; }
+
     /* Hero */
     .hero { background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%); padding: 60px 0 50px; border-bottom: 3px solid var(--ucd-gold); }
     .hero-content { max-width: 800px; }
@@ -213,7 +220,7 @@
         <div class="site-title"><h1></h1></div>
       </div>
       <ul class="main-menu">
-        <li><a href="symposium.html">Symposium</a></li>
+        <li><a href="symposium.html" style="color:var(--ucd-blue)">Symposium</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#resources">Resources</a></li>
         <li><a href="#research">Research</a></li>
@@ -225,6 +232,14 @@
       </ul>
     </div>
   </nav>
+
+  <!-- Symposium announcement -->
+  <div class="announce">
+    <div class="container announce-inner">
+      <span><b>CS AI4H Inaugural Symposium</b> &middot; Monday, October 12 &middot; 1&ndash;6 pm &middot; Aggie Square</span>
+      <a class="go" href="symposium.html">Details &amp; registration</a>
+    </div>
+  </div>
 
   <!-- Hero -->
   <section class="hero">
@@ -238,7 +253,6 @@
            To focus the many AI for Health efforts in our Computer Science Department at the UCD College of Engineering, we have launched the CS AI4H Initiative.
            From the current core, we aim to grow this initiative into an AI4H Center, through joint collaborations, education, and funding opportunities with medical researchers and clinicians.
         <div class="hero-buttons">
-          <a href="symposium.html" class="btn btn-secondary">Symposium &middot; Oct 12</a>
           <a href="#research" class="btn btn-secondary">Explore Research</a>
         </div>
         <div class="hero-stats">
