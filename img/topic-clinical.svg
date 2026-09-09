@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Health signal passing through concentric discs">
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdfaf3"/><stop offset="1" stop-color="#f3ece0"/>
+    </linearGradient>
+    <radialGradient id="ball" cx=".34" cy=".3" r=".78">
+      <stop offset="0" stop-color="#5b8ab8"/><stop offset=".55" stop-color="#1a4166"/><stop offset="1" stop-color="#022851"/>
+    </radialGradient>
+    <radialGradient id="goldball" cx=".34" cy=".3" r=".78">
+      <stop offset="0" stop-color="#ffe9a3"/><stop offset=".55" stop-color="#ffbf00"/><stop offset="1" stop-color="#b98600"/>
+    </radialGradient>
+    <linearGradient id="rod" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="400">
+      <stop offset="0" stop-color="#ffd75e"/><stop offset=".5" stop-color="#e5a800"/><stop offset="1" stop-color="#c08f00"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8fb4d4" stop-opacity=".55"/><stop offset="1" stop-color="#1a4166" stop-opacity=".65"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#ground)"/>
+  <ellipse cx="320" cy="350" rx="150" ry="24" fill="#022851" opacity="0.13"/>
+  <circle cx="320" cy="196" r="146" fill="url(#glass)" opacity="0.28" stroke="#1a4166" stroke-width="2" stroke-opacity=".45"/>
+  <circle cx="320" cy="196" r="112" fill="url(#glass)" opacity="0.38" stroke="#1a4166" stroke-width="2" stroke-opacity=".45"/>
+  <circle cx="320" cy="196" r="78" fill="url(#glass)" opacity="0.5" stroke="#1a4166" stroke-width="2" stroke-opacity=".45"/>
+  <circle cx="320.0" cy="196.0" r="46.0" fill="url(#goldball)"/><circle cx="306.2" cy="180.4" r="10.1" fill="#fff" opacity=".45"/>
+  <path d="M46 196 H150 L172 196 L190 152 L208 250 L228 172 L246 196 H286 L306 196 L322 104 L340 292 L358 196 H430 L452 196 L470 158 L486 236 L502 196 H594" fill="none" stroke="url(#rod)" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="46.0" cy="196.0" r="13.0" fill="url(#goldball)"/><circle cx="42.1" cy="191.6" r="2.9" fill="#fff" opacity=".45"/>
+  <circle cx="594.0" cy="196.0" r="13.0" fill="url(#goldball)"/><circle cx="590.1" cy="191.6" r="2.9" fill="#fff" opacity=".45"/>
+</svg>

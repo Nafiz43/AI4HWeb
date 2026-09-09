@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CS AI4H Inaugural Symposium — October 12, Aggie Square</title>
+  <link rel="icon" type="image/png" href="img/logo_ai4hi.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="CS AI for Health Initiative Inaugural Symposium, October 12, 1-6pm, Aggie Square Assembly Room. Free registration, talks, posters, networking." />
+
+  <style>
+    :root {
+      /* UC Davis palette, same values as index.html */
+      --accent: #022851;
+      --accent-soft: #1a4166;
+      --accent-wash: #f0f4f8;
+      --gold: #ffbf00;
+      --bg: #ffffff;
+      --bg-alt: #f4f6f8;
+      --surface: #ffffff;
+      --text: #1d2126;
+      --text-muted: #5a626b;
+      --border: #e2e6ea;
+      --shadow: 0 1px 3px rgba(2,40,81,0.07);
+      --max-width: 1040px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Proxima Nova', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      font-size: 15.5px;
+      transition: background-color .25s ease, color .25s ease;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    .topbar { background: var(--accent); color: #fff; font-size: 12px; padding: 6px 0; }
+    .topbar-inner { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+    .topbar a { color: inherit; font-weight: 600; }
+
+    .main-nav { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; gap: 20px; flex-wrap: wrap; }
+    .site-logo { width: 190px; }
+    .nav-right { display: flex; align-items: center; gap: 22px; }
+    .main-menu { display: flex; gap: 22px; list-style: none; }
+    .main-menu a { font-size: 14px; font-weight: 600; color: var(--text); padding-bottom: 3px; border-bottom: 2px solid transparent; }
+    .main-menu a:hover { border-bottom-color: var(--gold); text-decoration: none; }
+    @media (max-width: 820px) { .main-menu { display: none; } }
+
+    /* Hero */
+    .hero { background: linear-gradient(140deg, var(--accent-wash) 0%, var(--bg) 70%); padding: 34px 0 28px; border-bottom: 3px solid var(--gold); }
+    .kicker { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--accent-soft); margin-bottom: 12px; }
+    .hero h1 { font-size: clamp(27px, 4vw, 38px); line-height: 1.12; color: var(--accent); margin-bottom: 13px; letter-spacing: -.4px; }
+    .hero p { font-size: 16.5px; max-width: 680px; color: var(--text-muted); }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 34px; align-items: center; }
+    @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+    .hero-art { border-radius: 10px; box-shadow: var(--shadow); width: 100%; height: auto; }
+
+    .facts { display: flex; flex-wrap: wrap; margin: 22px 0; border: 1px solid var(--border); border-top: 3px solid var(--gold); border-radius: 8px; background: var(--surface); overflow: hidden; }
+    .fact { flex: 1 1 170px; padding: 11px 18px; border-left: 1px solid var(--border); }
+    .fact:first-child { border-left: 0; }
+    .fact-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.4px; color: var(--text-muted); font-weight: 700; }
+    .fact-value { font-size: 16px; font-weight: 700; color: var(--text); margin-top: 4px; }
+
+    .btn { display: inline-block; padding: 11px 24px; border-radius: 5px; font-size: 15px; font-weight: 700; cursor: pointer; border: 2px solid var(--accent); }
+    .btn:hover { text-decoration: none; }
+    .btn-primary { background: var(--accent); color: var(--bg); }
+    .btn-primary:hover { background: transparent; color: var(--accent); }
+    .btn-secondary { background: transparent; color: var(--accent); }
+    .btn-secondary:hover { background: var(--accent); color: var(--bg); }
+    .btn-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .btn-note { font-size: 13.5px; color: var(--text-muted); }
+
+    /* Sections */
+    section { padding: 30px 0; }
+    section:nth-of-type(even) { background: var(--bg-alt); }
+    .section-title { font-size: 23px; color: var(--accent); margin-bottom: 7px; letter-spacing: -.2px; }
+    .section-sub { color: var(--text-muted); font-size: 14.5px; max-width: 700px; margin-bottom: 17px; }
+    .prose p { margin-bottom: 11px; max-width: 740px; }
+
+    html { scroll-behavior: smooth; }
+    section { scroll-margin-top: 100px; }
+    a, .btn, summary, .fact, .hero-art { transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; }
+    .btn:active, summary:active { transform: scale(.98); }
+    .hero-art { animation: arrive .8s ease both; }
+    @keyframes arrive { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @media (hover: hover) {
+      .btn:hover, .fact:hover { transform: translateY(-4px); box-shadow: 0 10px 24px #02285118; }
+      .hero-art:hover { transform: translateY(-5px) rotate(-1deg); box-shadow: 0 18px 38px #02285122; }
+      summary:hover { background: #fff8e4; }
+    }
+
+    /* Illustrated research themes, one motif per topic. */
+    .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+    .topic { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: #fff; box-shadow: var(--shadow); }
+    .topic img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+    .topic-body { padding: 13px 16px 15px; }
+    .topic-body span { display: block; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #8c6800; margin-bottom: 4px; }
+    .topic-body h3 { font-size: 16px; color: var(--accent); margin-bottom: 6px; }
+    .topic-body p { font-size: 14px; color: var(--text-muted); }
+    summary { cursor: pointer; border-radius: 8px; }
+    details[open] > summary { background: #fff8e4; }
+
+    /* Calendar day view */
+    .calendar { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: #fff; box-shadow: var(--shadow); }
+    .calendar-head { display: flex; align-items: center; gap: 18px; padding: 14px 22px; background: var(--accent); color: #fff; }
+    .date-tile { text-align: center; border-radius: 10px; overflow: hidden; min-width: 76px; background: #fff; color: var(--accent); line-height: 1.2; }
+    .date-tile span { display: block; background: var(--gold); padding: 4px 12px; font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .date-tile strong { display: block; font-size: 30px; padding: 4px 12px; }
+    .calendar-head h3 { font-size: 19px; }
+    .calendar-head p { font-size: 13px; color: #dce6ef; }
+    .schedule-note { padding: 9px 22px; background: #fff8e4; font-size: 13px; color: #685000; border-bottom: 1px solid #f0dfaf; }
+    .day-grid { padding: 2px 22px 12px; }
+    .time-slot { display: grid; grid-template-columns: 85px minmax(0,1fr); border-top: 1px solid var(--border); }
+    .time-slot > time { padding-top: 11px; font-size: 12.5px; color: var(--text-muted); font-weight: 600; }
+    .event { margin: 4px 0; border-left: 3px solid #628cac; border-radius: 5px; background: #eef4f9; }
+    .event.gold { border-left-color: #c79200; background: #fff8e4; }
+    .event summary { padding: 9px 14px; color: var(--accent); font-weight: 700; }
+    .event summary small { display: block; margin-left: 16px; font-size: 11.5px; font-weight: 400; color: var(--text-muted); }
+    .event p { padding: 0 14px 12px; font-size: 13.5px; color: var(--text-muted); }
+    .calendar-end { padding-left: 0; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); }
+    @media (max-width: 700px) {
+      .research-panel { grid-template-columns: 1fr; }
+      .research-art { height: auto; }
+      .calendar-head { padding: 20px; gap: 16px; }
+      .calendar-head h3 { font-size: 19px; }
+      .day-grid { padding: 12px; }
+      .time-slot { grid-template-columns: 65px minmax(0,1fr); }
+      .schedule-note { padding: 12px 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+
+    /* Callout */
+    .callout { background: var(--accent-wash); border-left: 3px solid var(--accent-soft); border-radius: 0 6px 6px 0; padding: 14px 18px; max-width: 760px; font-size: 14.5px; }
+    .callout strong { color: var(--accent); }
+
+    footer { background: var(--accent); color: #fff; padding: 24px 0 16px; font-size: 13.5px; }
+    footer a { color: inherit; text-decoration: underline; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.25); margin-top: 18px; padding-top: 14px; opacity: .85; }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>UC DAVIS &middot; CS AI FOR HEALTH INITIATIVE</span>
+      <a href="index.html">&larr; Back to CS AI4H</a>
+    </div>
+  </div>
+
+  <nav class="main-nav">
+    <div class="container nav-inner">
+      <a href="index.html"><img src="img/logo_ai4hi.jpg" alt="CS AI for Health logo" class="site-logo" /></a>
+      <div class="nav-right">
+        <ul class="main-menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#program">Program</a></li>
+          <li><a href="#present">Present</a></li>
+          <li><a href="https://forms.gle/Dh9NvmwDPitoYFEF9" target="_blank" rel="noopener">Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="kicker">Save the date &middot; Registration open</div>
+          <h1>CS AI4H Inaugural Symposium</h1>
+          <p>A day for students, faculty, and industry to share AI for Health research, meet collaborators, and see what is happening across UC Davis and UC Davis Health.</p>
+        </div>
+        <img class="hero-art" src="img/symposium-hero.svg"
+             width="1200" height="700" fetchpriority="high"
+             alt="Abstract navy glass ribbons intertwined with golden data points and connected networks" />
+      </div>
+
+      <div class="facts">
+        <div class="fact"><div class="fact-label">Date</div><div class="fact-value">Monday, October 12</div></div>
+        <div class="fact"><div class="fact-label">Time</div><div class="fact-value">1:00 - 6:00 pm</div></div>
+        <div class="fact"><div class="fact-label">Place</div><div class="fact-value">Aggie Square, Assembly Room</div></div>
+        <div class="fact"><div class="fact-label">Cost</div><div class="fact-value">Free, registration required</div></div>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://forms.gle/Dh9NvmwDPitoYFEF9" target="_blank" rel="noopener">Register now</a>
+        <a class="btn btn-secondary" href="#present">Present a talk or poster</a>
+        <span class="btn-note">Registration closes once we hit venue capacity.</span>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container prose">
+      <h2 class="section-title">About the symposium</h2>
+      <p class="section-sub">First of its kind for the CS AI for Health Initiative.</p>
+      <p>The <a href="index.html">CS AI for Health Initiative (CS AI4H)</a> launched in August 2026. Its goal is to form a community of practice around AI for Health research and education, connecting computational talent at UC Davis with basic and translational research at UC Davis Health.</p>
+      <p>This symposium brings students and faculty together at UC Davis Health's Aggie Square to share their work, network, and learn from each other. Invited talks, student presentations, posters, and networking breaks give several ways to take part.</p>
+      <p>If you work in AI for Health, or would like to, we invite you to register for this free event.</p>
+    </div>
+  </section>
+
+  <section id="program">
+    <div class="container">
+      <h2 class="section-title">What the afternoon looks like</h2>
+      <p class="section-sub">One afternoon of ideas and connections. Tap a session to explore.</p>
+      <div class="calendar">
+        <div class="calendar-head">
+          <div class="date-tile"><span>OCT</span><strong>12</strong></div>
+          <div><h3>Monday, October 12, 2026</h3><p>1–6 pm · Pacific time · Aggie Square, Assembly Room</p></div>
+        </div>
+        <p class="schedule-note"><strong>Tentative program.</strong> The time breakdown below is illustrative; session times will be confirmed closer to the event.</p>
+        <div class="day-grid">
+          <div class="time-slot">
+            <time>1:00 pm</time>
+            <details class="event gold"><summary>Welcome &amp; opening<small>1:00–1:15 pm · 15 min</small></summary><p>Opening remarks and an introduction to the CS AI for Health community.</p></details>
+          </div>
+          <div class="time-slot">
+            <time>1:15 pm</time>
+            <details class="event"><summary>Invited talks<small>1:15–2:30 pm · 75 min</small></summary><p>Perspectives from computer science and clinical research.</p></details>
+          </div>
+          <div class="time-slot">
+            <time>2:30 pm</time>
+            <details class="event gold"><summary>Networking break<small>2:30–2:45 pm · 15 min</small></summary><p>Meet researchers and reconnect with colleagues.</p></details>
+          </div>
+          <div class="time-slot">
+            <time>2:45 pm</time>
+            <details class="event"><summary>Student presentations<small>2:45–4:00 pm · 75 min</small></summary><p>Short research talks, with priority given to students and junior faculty.</p></details>
+          </div>
+          <div class="time-slot">
+            <time>4:00 pm</time>
+            <details class="event gold"><summary>Poster session<small>4:00–5:00 pm · 60 min</small></summary><p>Explore recent and in-progress work, from methods to clinical applications.</p></details>
+          </div>
+          <div class="time-slot">
+            <time>5:00 pm</time>
+            <details class="event"><summary>Networking &amp; closing<small>5:00–6:00 pm · 60 min</small></summary><p>Continue the conversations and find collaborators across campus and industry.</p></details>
+          </div>
+          <div class="calendar-end">6:00 pm · End of symposium</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="present">
+    <div class="container">
+      <h2 class="section-title">Present your work</h2>
+      <p class="section-sub">Indicate on the registration form whether you want a talk slot or a poster.</p>
+      <div class="topic-grid">
+        <article class="topic">
+          <img src="img/topic-basic.svg" width="640" height="400" loading="lazy" alt="Abstract illustration: a molecular lattice of linked spheres" />
+          <div class="topic-body"><span>01</span><h3>Basic science</h3><p>Biology, medicine, and health science questions where AI plays a role.</p></div>
+        </article>
+        <article class="topic">
+          <img src="img/topic-methods.svg" width="640" height="400" loading="lazy" alt="Abstract illustration: stacked computational layers wired to surrounding nodes" />
+          <div class="topic-body"><span>02</span><h3>Computational methods</h3><p>Models, algorithms, benchmarks, data pipelines, and evaluation.</p></div>
+        </article>
+        <article class="topic">
+          <img src="img/topic-theory.svg" width="640" height="400" loading="lazy" alt="Abstract illustration: an abstract mathematical saddle surface ringed by an orbit" />
+          <div class="topic-body"><span>03</span><h3>Theory</h3><p>Theoretical approaches underpinning AI systems used in health.</p></div>
+        </article>
+        <article class="topic">
+          <img src="img/topic-clinical.svg" width="640" height="400" loading="lazy" alt="Abstract illustration: a health waveform passing through concentric glass discs" />
+          <div class="topic-body"><span>04</span><h3>Applied and clinical</h3><p>Deployment, clinical workflows, validation, and outcomes.</p></div>
+        </article>
+      </div>
+      <p style="margin-top:20px"><strong>Talks from students and junior faculty are especially welcome.</strong> Industry representatives are highly encouraged to register and attend.</p>
+    </div>
+  </section>
+
+  <section id="register">
+    <div class="container">
+      <h2 class="section-title">Register</h2>
+      <p class="section-sub">Free to attend. Please register early.</p>
+      <div class="callout">
+        <p>Registration closes once we reach the maximum number of attendees, so register as soon as you can and say on the form if you want to give a talk or show a poster. <strong>Presentation slots are very limited</strong>, and the committee may need to select from submissions if interest is high.</p>
+      </div>
+      <div class="btn-row" style="margin-top:20px">
+        <a class="btn btn-primary" href="https://forms.gle/Dh9NvmwDPitoYFEF9" target="_blank" rel="noopener">Open the registration form</a>
+        <span class="btn-note">Registration is handled by Google Forms. Questions: <a href="mailto:vlfilkov@ucdavis.edu">vlfilkov@ucdavis.edu</a></span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div><strong>UCD CS AI for Health Initiative</strong></div>
+      <div>General contact: vlfilkov@ucdavis.edu &middot; <a href="index.html">Initiative home</a></div>
+      <div class="footer-bottom">&copy; <span id="year"></span> The Regents of the University of California, Davis campus. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Stacked computational layers wired to surrounding nodes">
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdfaf3"/><stop offset="1" stop-color="#f3ece0"/>
+    </linearGradient>
+    <radialGradient id="ball" cx=".34" cy=".3" r=".78">
+      <stop offset="0" stop-color="#5b8ab8"/><stop offset=".55" stop-color="#1a4166"/><stop offset="1" stop-color="#022851"/>
+    </radialGradient>
+    <radialGradient id="goldball" cx=".34" cy=".3" r=".78">
+      <stop offset="0" stop-color="#ffe9a3"/><stop offset=".55" stop-color="#ffbf00"/><stop offset="1" stop-color="#b98600"/>
+    </radialGradient>
+    <linearGradient id="rod" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="400">
+      <stop offset="0" stop-color="#ffd75e"/><stop offset=".5" stop-color="#e5a800"/><stop offset="1" stop-color="#c08f00"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8fb4d4" stop-opacity=".55"/><stop offset="1" stop-color="#1a4166" stop-opacity=".65"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#ground)"/>
+  <ellipse cx="320" cy="352" rx="152" ry="24" fill="#022851" opacity="0.13"/>
+  <polygon points="214,272 320,312 426,272 426,285 320,325 214,285" fill="#33587c" opacity=".8"/>
+  <polygon points="214,272 320,232 426,272 320,312" fill="url(#glass)" opacity=".95" stroke="#1a4166" stroke-width="2" stroke-opacity=".45"/>
+  <polygon points="214,200 320,240 426,200 426,213 320,253 214,213" fill="#c08f00" opacity=".8"/>
+  <polygon points="214,200 320,160 426,200 320,240" fill="url(#goldball)" opacity=".9" stroke="#1a4166" stroke-width="2" stroke-opacity=".45"/>
+  <polygon points="214,128 320,168 426,128 426,141 320,181 214,141" fill="#33587c" opacity=".8"/>
+  <polygon points="214,128 320,88 426,128 320,168" fill="url(#glass)" opacity=".95" stroke="#1a4166" stroke-width="2" stroke-opacity=".45"/>
+  <path d="M92 272 Q153 238 214 272" fill="none" stroke="url(#rod)" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M548 272 Q487 238 426 272" fill="none" stroke="url(#rod)" stroke-width="4.5" stroke-linecap="round"/>
+  <circle cx="92.0" cy="272.0" r="16.0" fill="url(#ball)"/><circle cx="87.2" cy="266.6" r="3.5" fill="#fff" opacity=".45"/>
+  <circle cx="548.0" cy="272.0" r="16.0" fill="url(#ball)"/><circle cx="543.2" cy="266.6" r="3.5" fill="#fff" opacity=".45"/>
+  <path d="M92 200 Q153 166 214 200" fill="none" stroke="url(#rod)" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M548 200 Q487 166 426 200" fill="none" stroke="url(#rod)" stroke-width="4.5" stroke-linecap="round"/>
+  <circle cx="92.0" cy="200.0" r="16.0" fill="url(#ball)"/><circle cx="87.2" cy="194.6" r="3.5" fill="#fff" opacity=".45"/>
+  <circle cx="548.0" cy="200.0" r="16.0" fill="url(#ball)"/><circle cx="543.2" cy="194.6" r="3.5" fill="#fff" opacity=".45"/>
+  <path d="M92 128 Q153 94 214 128" fill="none" stroke="url(#rod)" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M548 128 Q487 94 426 128" fill="none" stroke="url(#rod)" stroke-width="4.5" stroke-linecap="round"/>
+  <circle cx="92.0" cy="128.0" r="16.0" fill="url(#ball)"/><circle cx="87.2" cy="122.6" r="3.5" fill="#fff" opacity=".45"/>
+  <circle cx="548.0" cy="128.0" r="16.0" fill="url(#ball)"/><circle cx="543.2" cy="122.6" r="3.5" fill="#fff" opacity=".45"/>
+  <circle cx="320.0" cy="60.0" r="14.0" fill="url(#goldball)"/><circle cx="315.8" cy="55.2" r="3.1" fill="#fff" opacity=".45"/>
+  <path d="M320 74 L320 88" stroke="url(#rod)" stroke-width="4.5" stroke-linecap="round"/>
+</svg>
