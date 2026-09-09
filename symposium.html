@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>CS AI4H Inaugural Symposium — October 12, Aggie Square</title>
+  <link rel="icon" type="image/png" href="img/logo_ai4hi.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="CS AI for Health Initiative Inaugural Symposium, October 12, 1-6pm, Aggie Square Assembly Room. Free registration, talks, posters, networking." />
+
+  <style>
+    /* Dynamic palette: accent hue drives every accent color, theme flips light/dark.
+       Both are set on <html> and remembered in localStorage. */
+    :root {
+      --h: 212;              /* accent hue, changed by the palette picker */
+      --accent: hsl(var(--h) 96% 22%);
+      --accent-soft: hsl(var(--h) 60% 40%);
+      --accent-wash: hsl(var(--h) 60% 96%);
+      --gold: #ffbf00;
+      --bg: #ffffff;
+      --bg-alt: #f4f6f8;
+      --surface: #ffffff;
+      --text: #1d2126;
+      --text-muted: #5a626b;
+      --border: #e2e6ea;
+      --shadow: 0 2px 10px rgba(0,0,0,0.08);
+      --max-width: 1100px;
+    }
+
+    :root[data-theme="dark"] {
+      --accent: hsl(var(--h) 85% 72%);
+      --accent-soft: hsl(var(--h) 60% 62%);
+      --accent-wash: hsl(var(--h) 30% 17%);
+      --bg: #10141a;
+      --bg-alt: #161c24;
+      --surface: #1a212a;
+      --text: #e8ecf1;
+      --text-muted: #a2adba;
+      --border: #2a333f;
+      --shadow: 0 2px 12px rgba(0,0,0,0.5);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Proxima Nova', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 16px;
+      transition: background-color .25s ease, color .25s ease;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    .topbar { background: var(--accent); color: #fff; font-size: 13px; padding: 8px 0; }
+    :root[data-theme="dark"] .topbar { color: #10141a; }
+    .topbar-inner { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+    .topbar a { color: inherit; font-weight: 600; }
+
+    .main-nav { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; gap: 20px; flex-wrap: wrap; }
+    .site-logo { width: 220px; }
+    .nav-right { display: flex; align-items: center; gap: 22px; }
+    .main-menu { display: flex; gap: 22px; list-style: none; }
+    .main-menu a { font-size: 15px; font-weight: 600; color: var(--text); padding-bottom: 3px; border-bottom: 2px solid transparent; }
+    .main-menu a:hover { border-bottom-color: var(--gold); text-decoration: none; }
+    @media (max-width: 820px) { .main-menu { display: none; } }
+
+    /* Palette controls */
+    .palette { display: flex; align-items: center; gap: 8px; }
+    .swatch { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--border); cursor: pointer; padding: 0; }
+    .swatch[aria-pressed="true"] { border-color: var(--text); transform: scale(1.15); }
+    .theme-toggle { background: none; border: 1px solid var(--border); color: var(--text); border-radius: 20px; padding: 5px 12px; font-size: 13px; font-weight: 600; cursor: pointer; }
+    .theme-toggle:hover { border-color: var(--accent); }
+
+    /* Hero */
+    .hero { background: linear-gradient(140deg, var(--accent-wash) 0%, var(--bg) 70%); padding: 60px 0 50px; border-bottom: 3px solid var(--gold); }
+    .kicker { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--accent-soft); margin-bottom: 12px; }
+    .hero h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.15; color: var(--accent); margin-bottom: 18px; }
+    .hero p { font-size: 18px; max-width: 720px; color: var(--text); }
+
+    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin: 32px 0; }
+    .fact { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: 6px; padding: 16px 18px; box-shadow: var(--shadow); }
+    .fact-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 700; }
+    .fact-value { font-size: 19px; font-weight: 700; color: var(--text); margin-top: 4px; }
+
+    .btn { display: inline-block; padding: 14px 30px; border-radius: 4px; font-size: 16px; font-weight: 700; cursor: pointer; border: 2px solid var(--accent); }
+    .btn:hover { text-decoration: none; }
+    .btn-primary { background: var(--accent); color: var(--bg); }
+    .btn-primary:hover { background: transparent; color: var(--accent); }
+    .btn-secondary { background: transparent; color: var(--accent); }
+    .btn-secondary:hover { background: var(--accent); color: var(--bg); }
+    .btn-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .btn-note { font-size: 14px; color: var(--text-muted); }
+
+    /* Sections */
+    section { padding: 55px 0; }
+    section:nth-of-type(even) { background: var(--bg-alt); }
+    .section-title { font-size: 28px; color: var(--accent); margin-bottom: 10px; }
+    .section-sub { color: var(--text-muted); max-width: 700px; margin-bottom: 30px; }
+    .prose p { margin-bottom: 16px; max-width: 760px; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 26px 24px; box-shadow: var(--shadow); }
+    .card h3 { font-size: 18px; color: var(--accent); margin-bottom: 8px; }
+    .card p { font-size: 15px; color: var(--text-muted); }
+
+    /* Programme list */
+    .agenda { list-style: none; border-top: 1px solid var(--border); max-width: 760px; }
+    .agenda li { display: flex; gap: 20px; padding: 16px 4px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    .agenda .what { font-weight: 600; }
+    .agenda .why { color: var(--text-muted); font-size: 15px; width: 100%; }
+
+    /* Callout */
+    .callout { background: var(--accent-wash); border: 1px solid var(--accent-soft); border-radius: 8px; padding: 22px 24px; max-width: 760px; }
+    .callout strong { color: var(--accent); }
+
+    footer { background: var(--accent); color: #fff; padding: 40px 0 25px; font-size: 14px; }
+    :root[data-theme="dark"] footer { color: #10141a; }
+    footer a { color: inherit; text-decoration: underline; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.25); margin-top: 25px; padding-top: 18px; opacity: .85; }
+    :root[data-theme="dark"] .footer-bottom { border-top-color: rgba(0,0,0,0.25); }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>UC DAVIS &middot; CS AI FOR HEALTH INITIATIVE</span>
+      <a href="index.html">&larr; Back to CS AI4H</a>
+    </div>
+  </div>
+
+  <nav class="main-nav">
+    <div class="container nav-inner">
+      <a href="index.html"><img src="img/logo_ai4hi.jpg" alt="CS AI for Health logo" class="site-logo" /></a>
+      <div class="nav-right">
+        <ul class="main-menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#program">Program</a></li>
+          <li><a href="#present">Present</a></li>
+          <li><a href="#register">Register</a></li>
+        </ul>
+        <div class="palette" role="group" aria-label="Accent color">
+          <button class="swatch" data-hue="212" style="background: hsl(212 96% 35%)" title="UC Davis blue" aria-pressed="true"></button>
+          <button class="swatch" data-hue="160" style="background: hsl(160 96% 30%)" title="Teal" aria-pressed="false"></button>
+          <button class="swatch" data-hue="280" style="background: hsl(280 60% 42%)" title="Violet" aria-pressed="false"></button>
+          <button class="swatch" data-hue="12"  style="background: hsl(12 75% 45%)"  title="Terracotta" aria-pressed="false"></button>
+        </div>
+        <button class="theme-toggle" id="themeBtn">Dark</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="kicker">Save the date &middot; Registration open</div>
+      <h1>CS AI4H Inaugural Symposium</h1>
+      <p>A day for students, faculty, and industry to share AI for Health research, meet collaborators, and see what is happening across UC Davis and UC Davis Health.</p>
+
+      <div class="facts">
+        <div class="fact"><div class="fact-label">Date</div><div class="fact-value">Monday, October 12</div></div>
+        <div class="fact"><div class="fact-label">Time</div><div class="fact-value">1:00 - 6:00 pm</div></div>
+        <div class="fact"><div class="fact-label">Place</div><div class="fact-value">Aggie Square, Assembly Room</div></div>
+        <div class="fact"><div class="fact-label">Cost</div><div class="fact-value">Free, registration required</div></div>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#register">Register now</a>
+        <a class="btn btn-secondary" href="#present">Present a talk or poster</a>
+        <span class="btn-note">Registration closes once we hit venue capacity.</span>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container prose">
+      <h2 class="section-title">About the symposium</h2>
+      <p class="section-sub">First of its kind for the CS AI for Health Initiative.</p>
+      <p>The <a href="index.html">CS AI for Health Initiative (CS AI4H)</a> launched in August 2026. Its goal is to form a community of practice around AI for Health research and education, connecting computational talent at UC Davis with basic and translational research at UC Davis Health.</p>
+      <p>This symposium brings students and faculty together at UC Davis Health's Aggie Square to share their work, network, and learn from each other. Invited talks, student presentations, posters, and networking breaks give several ways to take part.</p>
+      <p>If you work in AI for Health, or would like to, we invite you to register for this free event.</p>
+    </div>
+  </section>
+
+  <section id="program">
+    <div class="container">
+      <h2 class="section-title">What the afternoon looks like</h2>
+      <p class="section-sub">Five hours, four kinds of engagement. A detailed schedule follows closer to the date.</p>
+      <ul class="agenda">
+        <li><span class="what">Invited talks</span><span class="why">Senior speakers from computer science and clinical research.</span></li>
+        <li><span class="what">Student presentations</span><span class="why">Short talks, with priority given to students and junior faculty.</span></li>
+        <li><span class="what">Poster session</span><span class="why">Recent or in-progress work, from methods to clinical applications.</span></li>
+        <li><span class="what">Networking breaks</span><span class="why">Unstructured time to find collaborators across campus and industry.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="present">
+    <div class="container">
+      <h2 class="section-title">Present your work</h2>
+      <p class="section-sub">Indicate on the registration form whether you want a talk slot or a poster.</p>
+      <div class="grid">
+        <div class="card"><h3>Basic science</h3><p>Biology, medicine, and health science questions where AI plays a role.</p></div>
+        <div class="card"><h3>Computational methods</h3><p>Models, algorithms, benchmarks, data pipelines, and evaluation.</p></div>
+        <div class="card"><h3>Theory</h3><p>Theoretical approaches underpinning AI systems used in health.</p></div>
+        <div class="card"><h3>Applied and clinical</h3><p>Deployment, clinical workflows, validation, and outcomes.</p></div>
+      </div>
+      <p style="margin-top:26px"><strong>Talks from students and junior faculty are especially welcome.</strong> Industry representatives are highly encouraged to register and attend.</p>
+    </div>
+  </section>
+
+  <section id="register">
+    <div class="container">
+      <h2 class="section-title">Register</h2>
+      <p class="section-sub">Free to attend. Please register early.</p>
+      <div class="callout">
+        <p>Registration closes once we reach the maximum number of attendees, so register as soon as you can and say on the form if you want to give a talk or show a poster. <strong>Presentation slots are very limited</strong>, and the committee may need to select from submissions if interest is high.</p>
+      </div>
+      <div class="btn-row" style="margin-top:26px">
+        <a class="btn btn-primary" href="#" id="registerLink">Go to registration form</a>
+        <span class="btn-note">Questions: <a href="mailto:vlfilkov@ucdavis.edu">vlfilkov@ucdavis.edu</a></span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div><strong>UCD CS AI for Health Initiative</strong></div>
+      <div>General contact: vlfilkov@ucdavis.edu &middot; <a href="index.html">Initiative home</a></div>
+      <div class="footer-bottom">&copy; <span id="year"></span> The Regents of the University of California, Davis campus. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('themeBtn');
+
+    function setTheme(t) {
+      root.dataset.theme = t;
+      themeBtn.textContent = t === 'dark' ? 'Light' : 'Dark';
+      localStorage.setItem('ai4h-theme', t);
+    }
+    function setHue(h) {
+      root.style.setProperty('--h', h);
+      localStorage.setItem('ai4h-hue', h);
+      document.querySelectorAll('.swatch').forEach(s =>
+        s.setAttribute('aria-pressed', s.dataset.hue === String(h)));
+    }
+
+    themeBtn.onclick = () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+    document.querySelectorAll('.swatch').forEach(s => s.onclick = () => setHue(s.dataset.hue));
+
+    setTheme(localStorage.getItem('ai4h-theme') ||
+      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+    setHue(localStorage.getItem('ai4h-hue') || 212);
+  </script>
+</body>
+</html>
