@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Lattice of linked spheres representing basic science">
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdfaf3"/><stop offset="1" stop-color="#f3ece0"/>
+    </linearGradient>
+    <radialGradient id="ball" cx=".34" cy=".3" r=".78">
+      <stop offset="0" stop-color="#5b8ab8"/><stop offset=".55" stop-color="#1a4166"/><stop offset="1" stop-color="#022851"/>
+    </radialGradient>
+    <radialGradient id="goldball" cx=".34" cy=".3" r=".78">
+      <stop offset="0" stop-color="#ffe9a3"/><stop offset=".55" stop-color="#ffbf00"/><stop offset="1" stop-color="#b98600"/>
+    </radialGradient>
+    <linearGradient id="rod" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="400">
+      <stop offset="0" stop-color="#ffd75e"/><stop offset=".5" stop-color="#e5a800"/><stop offset="1" stop-color="#c08f00"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8fb4d4" stop-opacity=".55"/><stop offset="1" stop-color="#1a4166" stop-opacity=".65"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#ground)"/>
+  <ellipse cx="320" cy="372" rx="168" ry="27" fill="#022851" opacity="0.13"/>
+  <line x1="252" y1="124" x2="362" y2="124" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="252" y1="124" x2="252" y2="206" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="362" y1="124" x2="472" y2="124" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="362" y1="124" x2="362" y2="206" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="472" y1="124" x2="472" y2="206" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="252" y1="206" x2="362" y2="206" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="252" y1="206" x2="252" y2="288" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="362" y1="206" x2="472" y2="206" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="362" y1="206" x2="362" y2="288" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="472" y1="206" x2="472" y2="288" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="252" y1="288" x2="362" y2="288" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="362" y1="288" x2="472" y2="288" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="178" y1="186" x2="288" y2="186" stroke="url(#rod)" stroke-width="7" stroke-linecap="round" opacity="1"/>
+  <line x1="178" y1="186" x2="178" y2="268" stroke="url(#rod)" stroke-width="7" stroke-linecap="round" opacity="1"/>
+  <line x1="288" y1="186" x2="398" y2="186" stroke="url(#rod)" stroke-width="7" stroke-linecap="round" opacity="1"/>
+  <line x1="288" y1="186" x2="288" y2="268" stroke="url(#rod)" stroke-width="7" stroke-linecap="round" opacity="1"/>
+  <line x1="398" y1="186" x2="398" y2="268" stroke="url(#rod)" stroke-width="7" stroke-linecap="round" opacity="1"/>
+  <line x1="178" y1="268" x2="288" y2="268" stroke="url(#rod)" stroke-width="7" stroke-linecap="round" opacity="1"/>
+  <line x1="178" y1="268" x2="178" y2="350" stroke="url(#rod)" stroke-width="7" stroke-linecap="round" opacity="1"/>
+  <line x1="288" y1="268" x2="398" y2="268" stroke="url(#rod)" stroke-width="7" stroke-linecap="round" opacity="1"/>
+  <line x1="288" y1="268" x2="288" y2="350" stroke="url(#rod)" stroke-width="7" stroke-linecap="round" opacity="1"/>
+  <line x1="398" y1="268" x2="398" y2="350" stroke="url(#rod)" stroke-width="7" stroke-linecap="round" opacity="1"/>
+  <line x1="178" y1="350" x2="288" y2="350" stroke="url(#rod)" stroke-width="7" stroke-linecap="round" opacity="1"/>
+  <line x1="288" y1="350" x2="398" y2="350" stroke="url(#rod)" stroke-width="7" stroke-linecap="round" opacity="1"/>
+  <line x1="178" y1="186" x2="252" y2="124" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  <line x1="288" y1="186" x2="362" y2="124" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  <line x1="398" y1="186" x2="472" y2="124" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  <line x1="178" y1="268" x2="252" y2="206" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  <line x1="288" y1="268" x2="362" y2="206" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  <line x1="398" y1="268" x2="472" y2="206" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  <line x1="178" y1="350" x2="252" y2="288" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  <line x1="288" y1="350" x2="362" y2="288" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  <line x1="398" y1="350" x2="472" y2="288" stroke="url(#rod)" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  <circle cx="252.0" cy="124.0" r="15.0" fill="url(#ball)"/><circle cx="247.5" cy="118.9" r="3.3" fill="#fff" opacity=".45"/>
+  <circle cx="362.0" cy="124.0" r="15.0" fill="url(#ball)"/><circle cx="357.5" cy="118.9" r="3.3" fill="#fff" opacity=".45"/>
+  <circle cx="472.0" cy="124.0" r="15.0" fill="url(#ball)"/><circle cx="467.5" cy="118.9" r="3.3" fill="#fff" opacity=".45"/>
+  <circle cx="252.0" cy="206.0" r="15.0" fill="url(#ball)"/><circle cx="247.5" cy="200.9" r="3.3" fill="#fff" opacity=".45"/>
+  <circle cx="362.0" cy="206.0" r="15.0" fill="url(#ball)"/><circle cx="357.5" cy="200.9" r="3.3" fill="#fff" opacity=".45"/>
+  <circle cx="472.0" cy="206.0" r="15.0" fill="url(#ball)"/><circle cx="467.5" cy="200.9" r="3.3" fill="#fff" opacity=".45"/>
+  <circle cx="252.0" cy="288.0" r="15.0" fill="url(#ball)"/><circle cx="247.5" cy="282.9" r="3.3" fill="#fff" opacity=".45"/>
+  <circle cx="362.0" cy="288.0" r="15.0" fill="url(#ball)"/><circle cx="357.5" cy="282.9" r="3.3" fill="#fff" opacity=".45"/>
+  <circle cx="472.0" cy="288.0" r="15.0" fill="url(#ball)"/><circle cx="467.5" cy="282.9" r="3.3" fill="#fff" opacity=".45"/>
+  <circle cx="178.0" cy="186.0" r="21.0" fill="url(#ball)"/><circle cx="171.7" cy="178.9" r="4.6" fill="#fff" opacity=".45"/>
+  <circle cx="288.0" cy="186.0" r="21.0" fill="url(#ball)"/><circle cx="281.7" cy="178.9" r="4.6" fill="#fff" opacity=".45"/>
+  <circle cx="398.0" cy="186.0" r="21.0" fill="url(#ball)"/><circle cx="391.7" cy="178.9" r="4.6" fill="#fff" opacity=".45"/>
+  <circle cx="178.0" cy="268.0" r="21.0" fill="url(#ball)"/><circle cx="171.7" cy="260.9" r="4.6" fill="#fff" opacity=".45"/>
+  <circle cx="288.0" cy="268.0" r="21.0" fill="url(#goldball)"/><circle cx="281.7" cy="260.9" r="4.6" fill="#fff" opacity=".45"/>
+  <circle cx="398.0" cy="268.0" r="21.0" fill="url(#ball)"/><circle cx="391.7" cy="260.9" r="4.6" fill="#fff" opacity=".45"/>
+  <circle cx="178.0" cy="350.0" r="21.0" fill="url(#ball)"/><circle cx="171.7" cy="342.9" r="4.6" fill="#fff" opacity=".45"/>
+  <circle cx="288.0" cy="350.0" r="21.0" fill="url(#ball)"/><circle cx="281.7" cy="342.9" r="4.6" fill="#fff" opacity=".45"/>
+  <circle cx="398.0" cy="350.0" r="21.0" fill="url(#ball)"/><circle cx="391.7" cy="342.9" r="4.6" fill="#fff" opacity=".45"/>
+</svg>
