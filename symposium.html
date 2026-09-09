@@ -59,6 +59,9 @@
     .kicker { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--accent-soft); margin-bottom: 12px; }
     .hero h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.15; color: var(--accent); margin-bottom: 18px; }
     .hero p { font-size: 18px; max-width: 720px; color: var(--text); }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center; }
+    @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+    .hero-art { border-radius: 10px; box-shadow: var(--shadow); width: 100%; }
 
     .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin: 32px 0; }
     .fact { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: 6px; padding: 16px 18px; box-shadow: var(--shadow); }
@@ -126,9 +129,15 @@
 
   <header class="hero">
     <div class="container">
-      <div class="kicker">Save the date &middot; Registration open</div>
-      <h1>CS AI4H Inaugural Symposium</h1>
-      <p>A day for students, faculty, and industry to share AI for Health research, meet collaborators, and see what is happening across UC Davis and UC Davis Health.</p>
+      <div class="hero-grid">
+        <div>
+          <div class="kicker">Save the date &middot; Registration open</div>
+          <h1>CS AI4H Inaugural Symposium</h1>
+          <p>A day for students, faculty, and industry to share AI for Health research, meet collaborators, and see what is happening across UC Davis and UC Davis Health.</p>
+        </div>
+        <img class="hero-art" src="img/symposium-banner.svg"
+             alt="Illustration of a connected network of researchers with a health signal running through it" />
+      </div>
 
       <div class="facts">
         <div class="fact"><div class="fact-label">Date</div><div class="fact-value">Monday, October 12</div></div>
