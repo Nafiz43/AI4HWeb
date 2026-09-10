@@ -76,6 +76,37 @@
     .btn-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
     .btn-note { font-size: 13.5px; color: var(--text-muted); }
 
+    /* Detailed day-by-day schedule, parked until the programme is set.
+       Uncomment this block together with the calendar markup in #program.
+    Calendar day view.
+    .calendar { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: #fff; box-shadow: var(--shadow); }
+    .calendar-head { display: flex; align-items: center; gap: 18px; padding: 14px 22px; background: var(--accent); color: #fff; }
+    .date-tile { text-align: center; border-radius: 10px; overflow: hidden; min-width: 76px; background: #fff; color: var(--accent); line-height: 1.2; }
+    .date-tile span { display: block; background: var(--gold); padding: 4px 12px; font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .date-tile strong { display: block; font-size: 30px; padding: 4px 12px; }
+    .calendar-head h3 { font-size: 19px; }
+    .calendar-head p { font-size: 13px; color: #dce6ef; }
+    .schedule-note { padding: 9px 22px; background: #fff8e4; font-size: 13px; color: #685000; border-bottom: 1px solid #f0dfaf; }
+    .day-grid { padding: 2px 22px 12px; }
+    .time-slot { display: grid; grid-template-columns: 85px minmax(0,1fr); border-top: 1px solid var(--border); }
+    .time-slot > time { padding-top: 11px; font-size: 12.5px; color: var(--text-muted); font-weight: 600; }
+    .event { margin: 4px 0; border-left: 3px solid #628cac; border-radius: 5px; background: #eef4f9; }
+    .event.gold { border-left-color: #c79200; background: #fff8e4; }
+    .event summary { padding: 9px 14px; color: var(--accent); font-weight: 700; }
+    .event summary small { display: block; margin-left: 16px; font-size: 11.5px; font-weight: 400; color: var(--text-muted); }
+    .event p { padding: 0 14px 12px; font-size: 13.5px; color: var(--text-muted); }
+    .calendar-end { padding-left: 0; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); }
+    summary { cursor: pointer; border-radius: 8px; }
+    details[open] > summary { background: #fff8e4; }
+    @media (max-width: 700px) {
+      .calendar-head { padding: 20px; gap: 16px; }
+      .calendar-head h3 { font-size: 19px; }
+      .day-grid { padding: 12px; }
+      .time-slot { grid-template-columns: 65px minmax(0,1fr); }
+      .schedule-note { padding: 12px 20px; }
+    }
+    */
+
     /* Sections */
     section { padding: 30px 0; }
     section:nth-of-type(even) { background: var(--bg-alt); }
@@ -166,6 +197,44 @@
       <p class="section-sub">Monday, October 12, 1&ndash;6 pm, Aggie Square, Assembly Room.</p>
       <p class="prose-p">The afternoon will include invited talks, student presentations, a poster session,
       and networking breaks. Speakers and the detailed schedule are to be announced.</p>
+
+      <!-- Detailed schedule, parked until the programme is set. Uncomment this
+           together with the calendar CSS in the <style> block above.
+      <div class="calendar">
+        <div class="calendar-head">
+          <div class="date-tile"><span>OCT</span><strong>12</strong></div>
+          <div><h3>Monday, October 12, 2026</h3><p>1–6 pm · Pacific time · Aggie Square, Assembly Room</p></div>
+        </div>
+        <p class="schedule-note"><strong>Tentative program.</strong> The time breakdown below is illustrative; session times will be confirmed closer to the event.</p>
+        <div class="day-grid">
+          <div class="time-slot">
+            <time>1:00 pm</time>
+            <details class="event gold"><summary>Welcome &amp; opening<small>1:00–1:15 pm · 15 min</small></summary><p>Opening remarks and an introduction to the CS AI for Health community.</p></details>
+          </div>
+          <div class="time-slot">
+            <time>1:15 pm</time>
+            <details class="event"><summary>Invited talks<small>1:15–2:30 pm · 75 min</small></summary><p>Perspectives from computer science and clinical research.</p></details>
+          </div>
+          <div class="time-slot">
+            <time>2:30 pm</time>
+            <details class="event gold"><summary>Networking break<small>2:30–2:45 pm · 15 min</small></summary><p>Meet researchers and reconnect with colleagues.</p></details>
+          </div>
+          <div class="time-slot">
+            <time>2:45 pm</time>
+            <details class="event"><summary>Student presentations<small>2:45–4:00 pm · 75 min</small></summary><p>Short research talks, with priority given to students and junior faculty.</p></details>
+          </div>
+          <div class="time-slot">
+            <time>4:00 pm</time>
+            <details class="event gold"><summary>Poster session<small>4:00–5:00 pm · 60 min</small></summary><p>Explore recent and in-progress work, from methods to clinical applications.</p></details>
+          </div>
+          <div class="time-slot">
+            <time>5:00 pm</time>
+            <details class="event"><summary>Networking &amp; closing<small>5:00–6:00 pm · 60 min</small></summary><p>Continue the conversations and find collaborators across campus and industry.</p></details>
+          </div>
+          <div class="calendar-end">6:00 pm · End of symposium</div>
+        </div>
+      </div>
+      -->
     </div>
   </section>
 
